@@ -1,4 +1,3 @@
-%include  /usr/lib/rpm/macros.python
 %define _name Mail
 Summary:	ROX-Mail provides mail/no mail notification by its icon
 Summary(pl):	ROX-Mail, poprzez swoj± ikonê, powiadamia o nowej poczcie
