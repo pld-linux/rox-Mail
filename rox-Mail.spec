@@ -22,7 +22,7 @@ You can also use it to launch your favourite mail client.
 
 %description -l pl
 ROX-Mail jest apletem sprawdzaj±cym czy masz nowe wiadomo¶ci pocztowe.
-Mo¿esz tak¿e u¿ywac tego apletu aby uruchomiæ swojego ulubionego
+Mo¿esz tak¿e u¿ywaæ tego apletu aby uruchomiæ swojego ulubionego
 klienta pocztowego.
 
 %prep
