@@ -4,13 +4,13 @@ Summary:	ROX-Mail provides mail/no mail notification by its icon
 Summary(pl):	ROX-Mail, poprzez swoj± ikonê, powiadamia o nowej poczcie
 Name:		rox-%{_name}
 Version:	0.1.3
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.kerofin.demon.co.uk/rox/%{_name}-%{version}.tgz
 URL:		http://www.kerofin.demon.co.uk/rox/utils.html#mail
 BuildRequires:	rpm-pythonprov
-Requires:	python-pygtk
+Requires:	python-pygtk-gtk
 Requires:	python-PyXML
 %pyrequires_eq  python
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
