@@ -11,10 +11,10 @@ URL:		http://www.kerofin.demon.co.uk/rox/utils.html#mail
 BuildRequires:	rpm-pythonprov
 Requires:	python-pygtk-gtk
 Requires:	python-PyXML
-%pyrequires_eq  python
+%pyrequires_eq	python
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define   _appsdir  %{_libdir}/ROX-apps
+%define		_appsdir	%{_libdir}/ROX-apps
 
 %description
 ROX-Mail an applet which indicates whether or not you have new mail.
