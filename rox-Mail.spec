@@ -8,7 +8,6 @@ License:	GPL
 Group:		X11/Applications
 Source0:	http://www.kerofin.demon.co.uk/rox/%{_name}-%{version}.tgz
 URL:		http://www.kerofin.demon.co.uk/rox/utils.html#mail
-BuildRequires:	rpm-pythonprov
 Requires:	python-pygtk-gtk
 Requires:	python-PyXML
 %pyrequires_eq	python
