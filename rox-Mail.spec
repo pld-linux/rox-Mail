@@ -1,11 +1,10 @@
 %include  /usr/lib/rpm/macros.python
-%define _appsdir /usr/X11R6/share/ROX-apps
 %define _name Mail
 Summary:	ROX-Mail provides mail/no mail notification by its icon
 Summary(pl):	ROX-Mail, poprzez swoj± ikonê, powiadamia o nowej poczcie
 Name:		rox-%{_name}
 Version:	0.1.3
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.kerofin.demon.co.uk/rox/%{_name}-%{version}.tgz
@@ -18,6 +17,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
+%define   _appsdir  %{_libdir}/ROX-apps
 
 %description
 ROX-Mail an applet which indicates whether or not you have new mail.
