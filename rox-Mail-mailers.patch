@@ -1,0 +1,38 @@
+diff -urN Mail/AppletRun Mail.new/AppletRun
+--- Mail/AppletRun	2004-05-21 18:28:23.000000000 +0200
++++ Mail.new/AppletRun	2005-09-26 19:41:42.000000000 +0200
+@@ -40,8 +40,8 @@
+ if fname!=None:
+     mailers=Mailer.read_from(Mailer('dummy', ''), fname)
+ else:
+-    elm=Mailer('elm', '/usr/local/bin/elm', read='xterm -e %s')
+-    mailx=Mailer('mailx', '/usr/bin/mailx', read='xterm -e %s')
++    elm=Mailer('elm', '/usr/bin/elm', read='xterm -e %s')
++    mailx=Mailer('mailx', '/bin/mail', read='xterm -e %s')
+     fname=rox.choices.save('Mail', 'mailers.xml', 1)
+     mailers=[mailx, elm]
+     elm.write_to(mailers, fname)
+diff -urN Mail/doRead.py Mail.new/doRead.py
+--- Mail/doRead.py	2004-05-17 22:47:21.000000000 +0200
++++ Mail.new/doRead.py	2005-09-26 19:08:21.000000000 +0200
+@@ -14,7 +14,7 @@
+     mailers=Mailer.read_from(Mailer('dummy', ''), fname)
+     mailer=mailers[0]
+ else:
+-    mailer=Mailer('elm', '/usr/local/bin/elm', read='xterm -e %s')
++    mailer=Mailer('elm', '/usr/bin/elm', read='xterm -e %s')
+     fname=rox.choices.save('Mail', 'mailers.xml', 1)
+     mailer.write_to([mailer], fname)
+ 
+diff -urN Mail/SendFile.py Mail.new/SendFile.py
+--- Mail/SendFile.py	2003-03-16 13:27:03.000000000 +0100
++++ Mail.new/SendFile.py	2005-09-26 19:42:08.000000000 +0200
+@@ -76,7 +76,7 @@
+     def send_it(self, widget):
+         fname=rox.choices.load('Mail', 'mailers.xml')
+         if fname is None:
+-            mailer=Mailer('mailx', '/usr/bin/mailx')
++            mailer=Mailer('mailx', '/bin/mail')
+         else:
+             mailers=Mailer.read_from(Mailer('dummy', ''), fname)
+             mailer=mailers[0]
