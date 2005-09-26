@@ -3,20 +3,22 @@ Summary:	ROX-Mail provides mail/no mail notification by its icon
 Summary(pl):	ROX-Mail, poprzez swoj± ikonê, powiadamia o nowej poczcie
 Name:		rox-%{_name}
 Version:	0.3.7
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.kerofin.demon.co.uk/rox/%{_name}-%{version}.tar.gz
 # Source0-md5:	3c9959ecdfc4bdd8569d8cd5f3a0d786
+Patch0:		%{name}-mailers.patch
 URL:		http://www.kerofin.demon.co.uk/rox/mail.html
+Requires:	/bin/mail
 Requires:	python-pygtk-gtk
 Requires:	python-PyXML
 %pyrequires_eq	python
-Requires:	rox >= 2.2.0-2
+Requires:	rox >= 2.3
 Requires:	rox-Lib2 >= 1.9.12
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_appsdir	%{_libdir}/ROX-apps
+%define		_roxdir	%{_libdir}/rox
 
 %description
 ROX-Mail an applet which indicates whether or not you have new mail.
@@ -29,14 +31,15 @@ klienta pocztowego.
 
 %prep
 %setup -q -n %{_name}
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_appsdir}/%{_name}/{Help,pixmaps}
+install -d $RPM_BUILD_ROOT%{_roxdir}/%{_name}/{Help,pixmaps}
 
-install .DirIcon App* *.py Options.xml $RPM_BUILD_ROOT%{_appsdir}/%{_name}
-install Help/README $RPM_BUILD_ROOT%{_appsdir}/%{_name}/Help
-install pixmaps/*.xpm $RPM_BUILD_ROOT%{_appsdir}/%{_name}/pixmaps
+install .DirIcon App* *.py Options.xml $RPM_BUILD_ROOT%{_roxdir}/%{_name}
+install Help/README $RPM_BUILD_ROOT%{_roxdir}/%{_name}/Help
+install pixmaps/*.xpm $RPM_BUILD_ROOT%{_roxdir}/%{_name}/pixmaps
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -44,10 +47,10 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Help/{Changes,Versions}
-%attr(755,root,root) %{_appsdir}/%{_name}/*Run
-%{_appsdir}/%{_name}/.DirIcon
-%{_appsdir}/%{_name}/*.xml
-%{_appsdir}/%{_name}/*.py
-%{_appsdir}/%{_name}/Help
-%{_appsdir}/%{_name}/pixmaps
-%dir %{_appsdir}/%{_name}
+%attr(755,root,root) %{_roxdir}/%{_name}/*Run
+%{_roxdir}/%{_name}/.DirIcon
+%{_roxdir}/%{_name}/*.xml
+%{_roxdir}/%{_name}/*.py
+%{_roxdir}/%{_name}/Help
+%{_roxdir}/%{_name}/pixmaps
+%dir %{_roxdir}/%{_name}
