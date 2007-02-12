@@ -1,6 +1,6 @@
 %define _name Mail
 Summary:	ROX-Mail provides mail/no mail notification by its icon
-Summary(pl.UTF-8):   ROX-Mail, poprzez swoją ikonę, powiadamia o nowej poczcie
+Summary(pl.UTF-8):	ROX-Mail, poprzez swoją ikonę, powiadamia o nowej poczcie
 Name:		rox-%{_name}
 Version:	0.3.7
 Release:	2
