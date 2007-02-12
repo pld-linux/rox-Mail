@@ -1,6 +1,6 @@
 %define _name Mail
 Summary:	ROX-Mail provides mail/no mail notification by its icon
-Summary(pl):	ROX-Mail, poprzez swoj± ikonê, powiadamia o nowej poczcie
+Summary(pl.UTF-8):   ROX-Mail, poprzez swojÄ… ikonÄ™, powiadamia o nowej poczcie
 Name:		rox-%{_name}
 Version:	0.3.7
 Release:	2
@@ -24,9 +24,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 ROX-Mail an applet which indicates whether or not you have new mail.
 You can also use it to launch your favourite mail client.
 
-%description -l pl
-ROX-Mail jest apletem sprawdzaj±cym czy masz nowe wiadomo¶ci pocztowe.
-Mo¿esz tak¿e u¿ywaæ tego apletu aby uruchomiæ swojego ulubionego
+%description -l pl.UTF-8
+ROX-Mail jest apletem sprawdzajÄ…cym czy masz nowe wiadomoÅ›ci pocztowe.
+MoÅ¼esz takÅ¼e uÅ¼ywaÄ‡ tego apletu aby uruchomiÄ‡ swojego ulubionego
 klienta pocztowego.
 
 %prep
